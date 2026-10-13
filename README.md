@@ -7,7 +7,7 @@ A multilingual Korean skincare storefront mockup. The range philosophy is 70% tr
 - English, Korean and Simplified Chinese; language and currency are independent.
 - AUD and USD sample price books (A$24 / US$16), not live exchange rates or confirmed selling prices.
 - Responsive landing page, photo enlargement, prominently linked Madeca Cream product story, source-backed proof points, full expandable INCI ingredients, editable preview bag, planned Club 73 membership, newsletter and price-match form demonstrations.
-- Club 73 is planned to be free to join. Members may eventually suggest products and vote on a vetted shortlist; requests and votes will inform but not guarantee stocking decisions. There is no live membership registration, nomination or voting in this preview.
+- Club 73 is proposed as a free Korean skincare community focused on product discovery, recommendations, updates and potential member benefits. Customer suggestions may inform future assortment decisions, but there is no commitment to member voting or purchase decisions. Membership, submissions and benefits are not operational in this preview.
 - Only language, currency and sample bag quantity persist in browser local storage.
 - No real orders, payments, newsletter subscriptions, price-match submissions or loyalty accounts are created.
 - Search indexing is disabled while this is a mockup.
@@ -41,7 +41,7 @@ Enable the Worker’s `workers.dev` route under Settings → Domains & Routes. C
 
 ## Before opening for real orders
 
-Confirm selling prices, country-specific inventory/fulfilment, taxes and shipping; connect commerce and payment services; connect newsletter consent and email delivery; confirm Club 73 membership, product suggestion and advisory voting rules, plus price-match terms; add business/contact, privacy and returns information; review translations; replace preview-only wording and remove `noindex` only when ready. Use approved supplier product assets before commercial launch.
+Confirm selling prices, country-specific inventory/fulfilment, taxes and shipping; connect commerce and payment services; connect newsletter consent and email delivery; confirm how Club 73 community updates, optional suggestions and possible member benefits will work, plus price-match terms; add business/contact, privacy and returns information; review translations; replace preview-only wording and remove `noindex` only when ready. Use approved supplier product assets before commercial launch.
 
 ## Files
 
