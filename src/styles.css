@@ -59,3 +59,9 @@
   .zoom-hint{top:21px;right:20px;font-size:.68rem}
   .photo-dialog{padding:17px}
 }
+
+/* Shared footer navigation accommodates the new Creators & Partners link. */
+.footer-bottom .footer-link{font-size:.75rem;min-height:30px;display:inline-flex;align-items:center}
+.footer-bottom .footer-link:hover{text-decoration:underline;text-underline-offset:3px}
+.footer-bottom>div{flex-wrap:wrap;align-items:center;gap:8px 23px}
+@media(max-width:600px){.footer-bottom>div{gap:7px 18px}}

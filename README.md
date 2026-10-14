@@ -8,8 +8,9 @@ A multilingual Korean skincare storefront mockup. The range philosophy is 70% tr
 - AUD and USD sample price books (A$24 / US$16), not live exchange rates or confirmed selling prices.
 - Responsive landing page, photo enlargement, prominently linked Madeca Cream product story, source-backed proof points, full expandable INCI ingredients, editable preview bag, planned Club 73 membership, newsletter and price-match form demonstrations.
 - Club 73 is proposed as a free Korean skincare community focused on product discovery, recommendations, updates and potential member benefits. Customer suggestions may inform future assortment decisions, but there is no commitment to member voting or purchase decisions. Membership, submissions and benefits are not operational in this preview.
+- Creators & Partners is a footer-linked, multilingual pre-launch information page. Creators may prepare an email introduction to express interest; this **opens their email application** and does not submit or store information on our site. No payments, commissions, free products or partnerships are promised.
 - Only language, currency and sample bag quantity persist in browser local storage.
-- No real orders, payments, newsletter subscriptions, price-match submissions or loyalty accounts are created.
+- No real orders, payments, newsletter subscriptions, price-match submissions or loyalty accounts are created. There is no affiliate tracking, creator login or commission system.
 - Search indexing is disabled while this is a mockup.
 
 ## Run
@@ -26,7 +27,7 @@ Local preview: http://localhost:4173. Optional local build output: `public/`. Cl
 
 ## Publish on Cloudflare Workers
 
-In Workers & Pages, create a Worker connected to `samlim-415/ratio73`:
+In Workers & Pages, create a Worker connected to `sitesbystratlens/ratio73`:
 
 | Setting | Value |
 | --- | --- |
@@ -41,15 +42,20 @@ Enable the Worker’s `workers.dev` route under Settings → Domains & Routes. C
 
 ## Before opening for real orders
 
-Confirm selling prices, country-specific inventory/fulfilment, taxes and shipping; connect commerce and payment services; connect newsletter consent and email delivery; confirm how Club 73 community updates, optional suggestions and possible member benefits will work, plus price-match terms; add business/contact, privacy and returns information; review translations; replace preview-only wording and remove `noindex` only when ready. Use approved supplier product assets before commercial launch.
+Confirm selling prices, country-specific inventory/fulfilment, taxes and shipping; connect commerce and payment services; connect newsletter consent and email delivery; confirm how Club 73 community updates, optional suggestions and possible member benefits will work, plus price-match terms; establish a ratio73-branded contact inbox and a genuine, consent-based creator contact workflow before scaling outreach; add business/contact, privacy and returns information; review translations; replace preview-only wording and remove `noindex` only when ready. Use approved supplier product assets before commercial launch.
 
 ## Files
 
 - `src/index.html`: page structure and English content.
 - `src/styles.css`: responsive brand system and layouts.
 - `src/app.js`: translations, sample prices and client-only interactions.
+- `src/creators.html`, `src/creators.css`, `src/creators-locales.js`, `src/creators.js`: footer-linked creator collaboration information page, multilingual UI and email-draft interest flow.
 - `scripts/build.mjs`: copies only public source assets into `public/`.
 - `wrangler.jsonc`: Cloudflare static assets configuration.
+
+## Creator enquiry contact
+
+For the pre-launch demonstration, the Creators & Partners form opens an email draft addressed to `sam.lim@stratlens.com` (temporary contact). No browser form submissions are stored or sent to a server. Visitors must press **Send** in their email app; the page includes a direct email fallback if an email application is not configured. Before outreach at scale, replace this temporary address with a dedicated ratio73 address and add an appropriate privacy policy and reliable form or CRM workflow.
 
 ## Product sources and claim limits
 
