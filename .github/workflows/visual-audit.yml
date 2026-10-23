@@ -1,0 +1,36 @@
+name: Full website visual audit
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: visual-audit-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  capture:
+    name: Full public-site screenshots and audit evidence
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      AUDIT_BASE_URL: https://ratio73.sitesbystratlens.workers.dev/
+      AUDIT_SEED_PATHS: /,/creators.html
+      AUDIT_EXCLUDE_PREFIXES: /api/,/admin/,/login,/logout/,/staff/,/account/
+      AUDIT_MAX_PAGES: 24
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Chrome browser driver (no browser download)
+        run: |
+          google-chrome --version
+          npm install --prefix "$RUNNER_TEMP/stratlens-visual-audit" --no-audit --no-fund --no-save playwright-core@1.56.1
+      - name: Capture actual deployed public pages at desktop and mobile sizes
+        env:
+          NODE_PATH: ${{ runner.temp }}/stratlens-visual-audit/node_modules
+        run: node .github/scripts/visual-audit.cjs
+      - name: Save screenshots, manifest and review rubric
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-audit-${{ github.run_id }}
+          path: visual-audit-evidence/
+          if-no-files-found: warn
+          retention-days: 7
