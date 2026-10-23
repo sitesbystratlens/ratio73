@@ -52,7 +52,15 @@ async function main() {
           const response=await page.goto(item.url,{waitUntil:'domcontentloaded',timeout:30000});
           item.status=response&&response.status();
           await page.evaluate(()=>document.fonts&&document.fonts.ready).catch(()=>{});
-          await page.waitForTimeout(500);
+          await page.evaluate(async () => {
+            // Force lazy-loaded images to load before the full-page capture.
+            for (const img of document.querySelectorAll('img[loading="lazy"]')) img.loading = 'eager';
+            await Promise.race([
+              Promise.all([...document.images].map(img => img.decode().catch(() => {}))),
+              new Promise(resolve => setTimeout(resolve, 4000))
+            ]);
+          });
+          await page.waitForTimeout(200);
           const p=await page.evaluate(()=>({
             title:document.title,
             h1:[...document.querySelectorAll('h1')].map(e=>e.innerText.trim()).filter(Boolean),
